@@ -11,6 +11,8 @@ const Workout = workoutsDB.getModel();
 
 module.exports = async (req , res , next) => {
 
+    let user = req.session.user;
+
     // GET ALL workouts
     let workouts = await Workout.find({});
 
@@ -28,8 +30,6 @@ module.exports = async (req , res , next) => {
         // names must be equal
         return 0;
       });
-    
-    let user = req.session.user;
 
     // if no session data -- EXIT
     if (!user || user == null){

@@ -103,8 +103,7 @@ export default function AdminView() {
         let userLog=[]
         info.map((i)=>
             userLog.push([i.name, i.users])
-        )
-        
+            )
         for (let x of userLog){
             for (let i of x[1]){
                 mergedList.push([x[0], i.user_id, i.date])

@@ -6,7 +6,7 @@
 
 const mongoose = require('mongoose');
 
-const credentials = require("../credentials.js");
+const credentials = require("../.credentials.js");
 
 // Modified for local machine
 const dbUrl = 'mongodb+srv://' + credentials.username +
