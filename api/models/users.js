@@ -10,7 +10,7 @@
  const credentials = require("../credentials.js");
  
  // Modified for local machine
- const dbUrl = 'mongodb://' + credentials.username +
+ const dbUrl = 'mongodb+srv://' + credentials.username +
      ':' + credentials.password + '@' + credentials.host + '/' + credentials.database;
  
  let connection = null;

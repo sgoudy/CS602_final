@@ -13,6 +13,22 @@ module.exports = async (req , res , next) => {
 
     // GET ALL workouts
     let workouts = await Workout.find({});
+
+    // alphabetize
+    workouts.sort((a, b)=>{
+        var nameA = a.name.toUpperCase(); // ignore upper and lowercase
+        var nameB = b.name.toUpperCase(); // ignore upper and lowercase
+        if (nameA < nameB) {
+          return -1;
+        }
+        if (nameA > nameB) {
+          return 1;
+        }
+      
+        // names must be equal
+        return 0;
+      });
+    
     let user = req.session.user;
 
     // if no session data -- EXIT

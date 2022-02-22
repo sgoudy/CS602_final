@@ -1,5 +1,6 @@
 var express = require('express');
 var app = express();
+const PORT = process.env.PORT || 5000;
 
 // static resources
 app.use(express.static(__dirname + '/public'));
@@ -34,6 +35,6 @@ var routes = require('./routes/index');
 app.use('/', routes);
 
 
-app.listen(5000, function(){
-  console.log('http://localhost:5000');
+app.listen(PORT, ()=>{
+  console.log(`http://localhost:${PORT}`);
 });

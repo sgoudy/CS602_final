@@ -1,7 +1,6 @@
 module.exports = {
-	host:     'localhost:',
-    port:     '27017',      
-	username: 'admin',
-	password: 'secret',
-	database: 'finalProject_goudy'
+	host:     'cluster0.iznxt.mongodb.net',     
+	username: 'shelbygoudy',
+	password: 'hkhpas6DA66Sy',
+	database: 'get_sweaty'
 }
