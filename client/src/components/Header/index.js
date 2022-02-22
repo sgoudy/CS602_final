@@ -24,10 +24,8 @@ export default function Header(props) {
                 setNull(null)
                 navigate(res.data.redirectUrl)
             }})
-        .catch(function (error) {
-            if (error.response) {
-                console.log(error.response);
-            }
+        .catch((err)=>{
+            console.log(err);
         })     
     }
 

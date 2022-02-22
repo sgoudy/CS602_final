@@ -64,7 +64,7 @@ export default function AdminView() {
                 console.log(err)
             })
         }, 
-        [openAddWorkout, update, openEdit, navigate]
+        [update, openEdit, navigate]
     )
     
 
@@ -84,7 +84,7 @@ export default function AdminView() {
                 }
             })
             .catch((err)=>{
-                console.log(err.response)
+                console.log(err)
             })
         }
         setUpdate(false)

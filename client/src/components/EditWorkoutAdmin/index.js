@@ -52,8 +52,8 @@ export default function EditWorkoutAdmin(props) {
                 }
             })
             .catch(err=>
-                console.log(err.response)
-                )
+                console.log(err)
+            )
     }
 
     const goBack = ()=>{

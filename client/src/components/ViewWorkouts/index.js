@@ -33,12 +33,10 @@ export default function ViewWorkouts() {
                 console.log('Error: ' + res.message)
                 return
             }})
-        .catch(function (error) {
-            if (error.response) {
-                console.log(error.response);
-                navigate('/')
-            }
-        })     
+        .catch((err)=>{
+            console.log(err);
+            navigate('/')
+            })     
     }
 
     
@@ -55,10 +53,7 @@ export default function ViewWorkouts() {
                 setDisplay(true)
                 setInfo(res.data.data)
                 setUser(true)
-                // setUser(res.data.user)
-                // setRole(res.data.user.role)
                 setRole(res.data.user_role)
-                // console.log(res.data.user)
                 let revHistory = res.data.user_history.reverse();
                 setHistory(revHistory)
             }

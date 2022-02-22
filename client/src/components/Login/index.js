@@ -33,10 +33,8 @@ export default function Login() {
                 } else {
                     navigate(res.data.redirectUrl)
                 }})
-            .catch(function (error) {
-                if (error.response) {
-                    console.log(error.response);
-                }
+            .catch((err)=>{
+                console.log(err);
             })      
     };
 

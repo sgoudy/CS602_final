@@ -30,7 +30,7 @@ export default function AddWorkoutForm(props) {
             }
         })
         .catch((err) => {
-            console.log(err.response)
+            console.log(err)
             props.closeAddWorkout();
         })
     }
