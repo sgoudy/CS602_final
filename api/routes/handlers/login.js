@@ -34,9 +34,8 @@
                     'application/xml': function() {
                         let resultXml = 
                         '<?xml version="1.0"?>\n<data>\n' +
-                            '<user>'+session.user+'</user>' +
-                            '<redirectUrl>/admin/workouts</redirectUrl>'+
                             '<success>'+true+'</success>'+
+                            '<redirectUrl>/admin/workouts</redirectUrl>'+
                             '</data>';
                         res.type('application/xml');
                         res.send(resultXml);

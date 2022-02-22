@@ -18,14 +18,14 @@ const credentials = require('./cookieCredentials.js');
 const cookieParser = require('cookie-parser');
 const expressSession = require('express-session');
 
-// cookie-parser first
+// sessions
 const oneDay = 1000 * 60 * 60 * 24;
 app.use(cookieParser());
 app.use(expressSession({
         secret: credentials.cookieSecret, 
         resave: false, 
         saveUninitialized: true,
-        cookie: { maxAge: oneDay },
+        cookie: { maxAge: oneDay }
     }));
 
 

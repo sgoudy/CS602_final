@@ -41,7 +41,7 @@ export default function AdminView() {
 
     // GET Workouts
     useEffect(()=> {
-        axios.get('/api/workouts',{ withCredentials: true })
+        axios.get('/api/workouts')
             .then(res => {
                 if(res.status !== 200){
                     console.log('Oops! There was an error: ' + res.message)
@@ -135,7 +135,7 @@ export default function AdminView() {
                 if (res.status !== 200){
                     console.log(res.message)
                 } else {
-                    setUserData(res.data.data.history)
+                    setUserData(res.data.data)
                 }
             })
             .catch((err)=>{
@@ -265,7 +265,7 @@ export default function AdminView() {
                             <TableHead sx={{fontSize: 20}}>
                                 <TableRow key="headers">
                                     <TableCell key="h_date">Date</TableCell>
-                                    <TableCell key="h_id">Workout ID</TableCell>
+                                    <TableCell key="h_id">Workout</TableCell>
                                     <TableCell key="h_user">User ID</TableCell>
                                 </TableRow>
                             </TableHead>

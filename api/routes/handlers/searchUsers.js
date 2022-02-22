@@ -20,14 +20,20 @@
             res.format({
                 'application/json': function() {
                     res.json({
-                        data: user
+                        data: user.history
                     })
                 },
 
                 'application/xml': function() {
                     let resultXml = 
                     '<?xml version="1.0"?>\n<data>\n' +
-                        '<user>'+user+'</user>\n'+
+                    user.history.map((workout)=>{
+                        return (
+                            '<history id="' + workout._id + '">\n' + 
+                            '   <name>' + workout.name + '</name>\n' + 
+                            '   <date>' + workout.date +'</date>\n' + 
+                            '   <notes>' + workout.notes +'</notes>\n'
+                            )}).join('\n')+'\n</history>\n'+
                         '</data>';
                     res.type('application/xml');
                     res.send(resultXml);

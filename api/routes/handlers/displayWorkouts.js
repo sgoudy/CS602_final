@@ -73,7 +73,13 @@ module.exports = async (req , res , next) => {
             let resultXml = 
                 '<?xml version="1.0"?>\n<data>\n' +
                 '<role>'+user.role+'</role>'+
-                '<history>'+user.history+'</history>'+
+                user.history.map((workout)=>{
+                    return (
+                        '<history id="' + workout._id + '">\n' + 
+                        '   <name>' + workout.name + '</name>\n' + 
+                        '   <date>' + workout.date +'</date>\n' + 
+                        '   <notes>' + workout.notes +'</notes>\n'
+                        )}).join('\n')+'\n</history>\n'+
                 workouts.map((workout)=>{
                     return (
                         '<workout id="' + workout._id + '">\n' + 

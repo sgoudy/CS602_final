@@ -1,3 +1,3 @@
 module.exports = {
-	cookieSecret: 'supersecret'
+	cookieSecret: 'FKj/#P8EcUaIH4X4MPdKF6-DU$(.R('
 }

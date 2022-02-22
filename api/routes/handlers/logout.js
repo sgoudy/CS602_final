@@ -7,6 +7,9 @@
 
 module.exports = (async (req , res , next) => {
     
+    // set session to null
+    req.session.user = null;
+
     // destroys session
     delete req.session.user;
 
@@ -14,7 +17,6 @@ module.exports = (async (req , res , next) => {
     res.format({
         'application/json': function() {
             res.json({
-                user: null,
                 success:true,
                 redirectUrl: '/login',
             })
@@ -23,7 +25,6 @@ module.exports = (async (req , res , next) => {
         'application/xml': function() {
             let resultXml = 
             '<?xml version="1.0"?>\n<data>\n' +
-                '<user>'+null+'</user>' +
                 '<redirectUrl>/login</redirectUrl>'+
                 '<success>'+true+'</success>'+
                 '</data>';

@@ -42,7 +42,7 @@ export default function ViewWorkouts() {
     
     // GET Workouts
     useEffect(()=> 
-        axios.get('/api/workouts',{ withCredentials: true })
+        axios.get('/api/workouts')
         .then(res => {
             if(res.status !== 200){
                 console.log('Error: ' + res.message)

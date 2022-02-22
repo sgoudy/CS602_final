@@ -40,7 +40,6 @@ router.put('/api/workout/edit/:id', editWorkout);
 router.get('/api/workouts/:name', searchWorkouts)
 
 // search users
-router.get('/api/users', searchUsers)
 router.get('/api/users/:id', searchUsers)
 
 
