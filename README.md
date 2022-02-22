@@ -3,6 +3,21 @@
 ### Due: 28 Feb 22
 # Final Project: Get Sweaty
 
+* User View  
+![user view](user_view1.png)
+
+* User View of an Individual Workout   
+![user view ind. workout](complete_workout.png)
+
+* Admin Main  
+![admin](admin_main.png)
+
+* Admin Scrolled Down  
+![admin scrolled down](admin_2.png)
+
+* Login Page  
+![login](login.png)
+
 Getting Started:
 
 This app is connected to my Mongo Cloud account. To run this app locally, you'll need my credentials.  
