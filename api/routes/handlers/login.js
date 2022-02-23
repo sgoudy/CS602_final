@@ -15,7 +15,8 @@
                 })
                 
     // check password against encrypted password in DB
-    if (await user.isPasswordMatch(req.body.password)){
+    if (user){
+        if (await user.isPasswordMatch(req.body.password)){
         
             // create a session and store user data
             let session = req.session;
@@ -66,11 +67,30 @@
     }
     
     // user not authenticated
-    else {
+        else {
+            res.format({
+                'application/json': function() {
+                    res.status(401).json({
+                        message: 'Invalid Credentials',
+                    })
+                },
+                'application/xml': function() {
+                    let resultXml = 
+                    '<?xml version="1.0"?>\n<data>\n' +
+                    '<status>401</status>\n' +
+                    '<message>Invalid Credentials</message>\n' +
+                    '</data>';
+                    res.type('application/xml');
+                    res.send(resultXml);
+                }
+            })
+            return;
+        }
+    } else {
         res.format({
             'application/json': function() {
                 res.status(401).json({
-                    message: 'Invalid Credentials',
+                    message: 'Invalid Credentials here',
                 })
             },
             'application/xml': function() {
@@ -85,5 +105,6 @@
         })
         return;
     }
+    
  };
  

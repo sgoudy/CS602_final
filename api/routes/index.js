@@ -12,7 +12,6 @@ var login = require("./handlers/login")
 var logout = require("./handlers/logout")
 
 var displayWorkouts = require("./handlers/displayWorkouts");
-var displayWorkout = require("./handlers/displayWorkout");
 var editUser = require("./handlers/editUserHistory");
 
 var addWorkout = require("./handlers/addWorkout");
@@ -28,7 +27,6 @@ router.get('/api/logout', logout);
 
 // admin and user routes
 router.get('/api/workouts', displayWorkouts); 
-router.get('/api/workout/:id', displayWorkout);
 router.put('/api/user/edit/:id', editUser)
 
 // admin only routes

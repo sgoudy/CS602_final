@@ -1,4 +1,5 @@
 import axios from 'axios';
+import {useState} from 'react';
 import { useNavigate } from 'react-router-dom';
 import FitnessCenterIcon from '@mui/icons-material/FitnessCenter';
 
@@ -14,10 +15,12 @@ import {
 
 export default function Login() {
     
+    const [message, setMessage] = useState('')
     const navigate = useNavigate();
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        setMessage('')
         const data = new FormData(e.currentTarget);  
         axios({
             method: 'post',
@@ -28,12 +31,12 @@ export default function Login() {
             }
             })
             .then((res) => {
-                if (res.status !== 200) {
-                    console.log(res.statusText)
-                } else {
+                if (res.status === 200) {
                     navigate(res.data.redirectUrl)
-                }})
+                }
+            })
             .catch((err)=>{
+                setMessage('Invalid Credentials.')
                 console.log(err);
             })      
     };
@@ -75,6 +78,10 @@ export default function Login() {
                 id="password"
                 autoComplete="current-password"
               />
+              {message !== ''
+              ? <Typography sx={{color: 'red', fontSize: 12}}>{message}</Typography>
+              : null
+              }
               <Button
                 type="submit"
                 fullWidth

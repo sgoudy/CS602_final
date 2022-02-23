@@ -24,19 +24,10 @@ export default function ViewWorkouts() {
 
     const navigate = useNavigate();
    
+    // View single workout
     const getWorkout = (data) =>{
         setShowWorkout(true)
-        setSingleWorkout(data)
-        axios.get(`/api/workout/${data._id}`)
-        .then((res) => {
-            if(res.status !== 200){
-                console.log('Error: ' + res.message)
-                return
-            }})
-        .catch((err)=>{
-            console.log(err);
-            navigate('/')
-            })     
+        setSingleWorkout(data)  
     }
 
     
