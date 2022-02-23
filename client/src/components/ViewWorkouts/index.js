@@ -123,30 +123,7 @@ export default function ViewWorkouts() {
                         </div>
                     : <Grid container sx={{justifyContent: 'center'}}>
                         <SearchForm setSearchInfo={setSearchInfo}/>
-                        {/* <Grid item
-                            component="form" 
-                            sx={{
-                                mx: 3
-                            }}
-                            onSubmit={searchWorkouts}
-                            >
-                            <TextField 
-                                sx={{m: 1}}
-                                size="small"
-                                id="search_name"
-                                placeholder="Search"
-                                variant="outlined"
-                            />
-                            <Button 
-                                sx={{m: 1}}
-                                type="submit" 
-                                variant="contained"
-                                >
-                                Go
-                            </Button>
-                        </Grid> */}
-
-
+                       
                         {/* // Clickable workout boxes */}
                         <Grid container sx={{justifyContent: 'center'}}>
                             {info?.map(data => 
