@@ -9,7 +9,7 @@
 
  const credentials = require("../.credentials.js");
  
- // Modified for local machine
+ // Mongo Atlas
  const dbUrl = 'mongodb+srv://' + credentials.username +
      ':' + credentials.password + '@' + credentials.host + '/' + credentials.database;
  
@@ -18,7 +18,7 @@
  
  let Schema = mongoose.Schema;
  
- // Step 1. Fill in the schema definition
+ // User Schema
  let userSchema = new Schema({
      username: String,
      password: String,
@@ -29,7 +29,6 @@
      }],
      role: String
  }, {
- // Step 2. For collection, replace lastName below with your lastName 
      collection: 'users'
  });
  

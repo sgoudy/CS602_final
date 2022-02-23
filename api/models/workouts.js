@@ -8,7 +8,7 @@ const mongoose = require('mongoose');
 
 const credentials = require("../.credentials.js");
 
-// Modified for local machine
+// Mongo Atlas
 const dbUrl = 'mongodb+srv://' + credentials.username +
 	':' + credentials.password + '@' + credentials.host + '/' + credentials.database;
 
@@ -17,7 +17,7 @@ let model = null;
 
 let Schema = mongoose.Schema;
 
-// Step 1. Fill in the schema definition
+// Workout Schema
 let workoutsSchema = new Schema({
 	name: String,
     description: String,
@@ -26,7 +26,6 @@ let workoutsSchema = new Schema({
         'date': String
     }]
 }, {
-// Step 2. For collection, replace lastName below with your lastName 
 	collection: 'workouts'
 });
 

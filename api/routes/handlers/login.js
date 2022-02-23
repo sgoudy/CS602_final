@@ -90,7 +90,7 @@
         res.format({
             'application/json': function() {
                 res.status(401).json({
-                    message: 'Invalid Credentials here',
+                    message: 'Invalid Credentials.',
                 })
             },
             'application/xml': function() {
