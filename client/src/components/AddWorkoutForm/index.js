@@ -9,7 +9,7 @@ export default function AddWorkoutForm(props) {
      * @param {event} e form submission event
      */
     const addWorkout = (e) => {
-        // e.preventDefault();
+        e.preventDefault();
         const name = document.getElementById("name").value;
         const description = document.getElementById("description").value;
 

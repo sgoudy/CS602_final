@@ -15,7 +15,7 @@ var cors = require('cors')
 app.use(cors())
 
 // for signed cookies
-const credentials = require('./cookieCredentials.js');
+const credentials = require('./.credentials.js');
 const cookieParser = require('cookie-parser');
 const expressSession = require('express-session');
 

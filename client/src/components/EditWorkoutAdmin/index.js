@@ -56,10 +56,6 @@ export default function EditWorkoutAdmin(props) {
             )
     }
 
-    const goBack = ()=>{
-        props.back()
-    }
-    
     return (
         <Grid container justifyContent="center" textAlign="center" sx={{m: 2, px: 10}} component="form" onSubmit={saveEdits}>
             <Grid item xs={12} textAlign="center" sx={{m: 2}}>
@@ -99,7 +95,7 @@ export default function EditWorkoutAdmin(props) {
                     variant="outlined"
                 />
             </Grid>
-            <Button variant="contained" onClick={goBack} sx={{m: 2}}>
+            <Button variant="contained" onClick={()=>props.back()} sx={{m: 2}}>
               Cancel
             </Button>
             <Button variant="contained" onClick={saveEdits} sx={{m: 2}}>

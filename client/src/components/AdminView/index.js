@@ -36,7 +36,10 @@ export default function AdminView() {
 
      /** Add Workout Modal Open/Close */
     const [openAddWorkout, setAddWorkout] = useState(false)
-    const handleOpenAddWorkout = () => setAddWorkout(true)
+    const handleOpenAddWorkout = () => {
+        setUpdate(true);
+        setAddWorkout(true);
+    }
 
 
     // GET Workouts
@@ -205,7 +208,10 @@ export default function AdminView() {
                         {openAddWorkout &&
                         <AddWorkoutForm
                             open={openAddWorkout}
-                            closeAddWorkout={()=>setAddWorkout(false)}
+                            closeAddWorkout={()=>{
+                                setAddWorkout(false);
+                                setUpdate(false)
+                                }}
                         />}
                     </Grid>
 

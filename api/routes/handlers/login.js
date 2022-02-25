@@ -55,7 +55,6 @@
                     'application/xml': function() {
                         let resultXml = 
                         '<?xml version="1.0"?>\n<data>\n' +
-                            '<user>'+session.user+'</user>\n' +
                             '<redirectUrl>/workouts</redirectUrl>\n'+
                             '<success>'+true+'</success>\n'+
                             '</data>';
